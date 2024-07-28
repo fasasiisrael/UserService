@@ -1,0 +1,16 @@
+{
+  "type": "mysql",
+  "host": "mysql",
+  "port": 3306,
+  "username": "root",
+  "password": "Adebayo0909!",
+  "database": "ecommerce",
+  "entities": ["dist/**/*.entity.js"],
+  "migrations": ["src/migration/**/*.ts"],
+  "synchronize": true,
+
+  "cli": {
+    "migrationsDir": "src/migration"
+  }
+}
+ 

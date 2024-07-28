@@ -1,0 +1,34 @@
+
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: myapp
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: myapp
+  template:
+    metadata:
+      labels:
+        app: myapp
+    spec:
+      containers:
+      - name: myapp
+        image: my-nestjs-app:latest
+        ports:
+        - containerPort: 3000
+        env:
+        - name: DATABASE_HOST
+          value: mysql
+        - name: DATABASE_PORT
+          value: "3307"
+        - name: DATABASE_USERNAME
+          value: root
+        - name: DATABASE_PASSWORD
+          value: Adebayo0909!
+        - name: DATABASE_NAME
+          value: ecommerce
+        - name: JWT_SECRET
+          value: eyJhbGciOiJIUzI1NiJ9.ew0KICAic3ViIjogIjEyMzQ1Njc4OTAiLA0KICAibmFtZSI6ICJBbmlzaCBOYXRoIiwNCiAgImlhdCI6IDE1MTYyMzkwMjINCn0.ZLMKDMQCaSqU1L907ZZvcios34kQhE16cjRlrSHCWO4
+  
